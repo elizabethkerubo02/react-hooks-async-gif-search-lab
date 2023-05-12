@@ -1,13 +1,18 @@
 import react from "react";
 
-function GifList({dataFetch}){
-    const theImages = dataFetch && dataFetch.map((data,index) => (
-        <li key={index}>
-            <img  src={data.images.original.url}/>
+import "./App.css"
+
+function GifList({gifList}){
+    const theImages = gifList && gifList.map((data,index) => (
+        <li  className="list" key={index}>
+            <img className="img" src={data.images.original.url} alt={data.title} />
+            <p>Rating: {data.rating}</p>
 
         </li>
     ));
-    return <ul>{theImages}</ul>
+    return (
+        <div className="container"> <ul className="gifs">{theImages}</ul> </div>
+    )
 }
 
 export default GifList;

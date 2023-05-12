@@ -23,7 +23,7 @@ function GifListContainer(){
 
     return(
         <div>
-            <GifSerach setSearch={setSearch} handler={submitHandler} />
+            <GifSearch setSearch={setSearch} handler={submitHandler} />
             <GifList gifList={gifList} />
         </div>
     )
